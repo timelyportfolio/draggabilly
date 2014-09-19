@@ -2,20 +2,18 @@ library(htmltools)
 library(pipeR)
 
 tagList(
-  tags$div(id = "draggable_h1"
-   ,tags$h1( 
-      "Make that shiz "
-      , tags$a(href = "http://draggabilly.desandro.com", "dRaggable")
-   )
+  tags$h1( id = "draggable_h1"
+    ,"Make that shiz "
+    , tags$a(href = "http://draggabilly.desandro.com", "dRaggable")
   )
   ,tags$script(
-"
-window.onload = function() {
-
-  var dh1 = document.getElementById('draggable_h1');
-  var drag1 = new Draggabilly( dh1 );
-}
-"  %>>% HTML
+    "
+    window.onload = function() {
+    
+      var dh1 = document.getElementById('draggable_h1');
+      var drag1 = new Draggabilly( dh1 );
+    }
+    "
   )
 )  %>>%
   attachDependencies(
